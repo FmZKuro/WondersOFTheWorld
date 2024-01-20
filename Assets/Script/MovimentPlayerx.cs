@@ -72,10 +72,19 @@ public class MovimentPlayerx : MonoBehaviour
 
         FlipPlayer();
 
-
         if(Input.GetButtonDown("Jump") && isTouchingGround)
         {
             player_RigidBody.velocity = new Vector2(player_RigidBody.velocity.x, jumpForce);
+            player_Animator.Play("IsJumping");
+        }
+        
+        if(player_RigidBody.velocity.y < 0)
+        {
+            player_Animator.SetBool("isFall", true);
+        }
+        else
+        {
+            player_Animator.SetBool("isFall", false);
         }
     /*
         if (jump.IsPressed() && IsJumping)
