@@ -205,7 +205,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   IFramesDuration: 3
   CountFlashses: 3
-  TargetNumLayers: 0a00000008000000
+  TargetNumLayers: 0a00000009000000
 --- !u!114 &9081723593798184514
 MonoBehaviour:
   m_ObjectHideFlags: 0
