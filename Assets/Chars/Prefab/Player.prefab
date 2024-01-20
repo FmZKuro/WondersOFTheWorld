@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6288581933483673602}
   - component: {fileID: 6421134810660787828}
   - component: {fileID: 640215905582573983}
+  - component: {fileID: 9081723593798184514}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -37,7 +38,7 @@ Transform:
   - {fileID: 2350654831164518502}
   - {fileID: 7231759450610110333}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9190555600115074190
 SpriteRenderer:
@@ -205,6 +206,28 @@ MonoBehaviour:
   IFramesDuration: 3
   CountFlashses: 3
   TargetNumLayers: 0a00000008000000
+--- !u!114 &9081723593798184514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209938564464012562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ce95360a7d72942b1966b6ea162a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPoint: {fileID: 0}
+  RespawnHeight: -5
+  speedMove: 10
+  jumpForce: 9
+  jumpTime: 0.35
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  feetPos: {fileID: 2350654831164518502}
+  feetRadius: 0.2
 --- !u!1 &8190551169739202255
 GameObject:
   m_ObjectHideFlags: 0

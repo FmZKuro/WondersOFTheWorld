@@ -73,26 +73,6 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(TimeAnimAttack());
     }
 
-    /*void OnAttack(InputAction.CallbackContext context)
-    {
-        if (!inAttack)
-        {
-            Vector2 posHitBox = initPosHitBoxAttack;
-            if (GetComponent<SpriteRenderer>().flipX)
-            {
-                posHitBox = new Vector2(-initPosHitBoxAttack.x, posHitBox.y);
-            }
-            else
-            {
-                posHitBox = new Vector2(initPosHitBoxAttack.x, posHitBox.y);
-            }
-
-            HitBoxAttack.transform.localPosition = posHitBox;
-
-            StartCoroutine(TimeAnimAttack());
-        }
-    }*/
-
     private IEnumerator TimeAnimAttack()
     {
         inAttack = true;

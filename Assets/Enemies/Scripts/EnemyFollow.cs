@@ -34,7 +34,6 @@ public class EnemyFollow : MonoBehaviour
         bool playerInsidePoints = IsPlayerInsidePoints(playerTargetPos);
 
 
-
         if (canFollowPlayer && playerInsidePoints)
         {
             directionTarget = (playerTargetPos - transform.position).normalized;
