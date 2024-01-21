@@ -169,10 +169,17 @@ RectTransform:
   m_Father: {fileID: 412468419203320406}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 39, y: -62.9991}
   m_SizeDelta: {x: 100.6043, y: 87.2186}
+=======
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -508.6, y: 172}
+  m_SizeDelta: {x: 95.239685, y: 87.2186}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7036934336145050514
 CanvasRenderer:

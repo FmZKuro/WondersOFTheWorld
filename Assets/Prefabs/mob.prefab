@@ -209,6 +209,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 8543061094899202355}
+    - target: {fileID: 7198404843678744629, guid: 207aa8b8a5034c441a396ab921163079, type: 3}
+      propertyPath: TargetNumLayers.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602917329784024494, guid: 207aa8b8a5034c441a396ab921163079, type: 3}
+      propertyPath: m_Name
+      value: LifeSlider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
