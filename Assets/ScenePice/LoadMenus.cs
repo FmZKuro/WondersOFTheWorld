@@ -7,7 +7,7 @@ public class LoadMenus : MonoBehaviour
 {
     public void MenuLoad()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");         // Carrega a cena do menu quando esta função é chamada
     }
 
 }
