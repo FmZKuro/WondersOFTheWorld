@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject menuStart;
-    [SerializeField] private GameObject menuConfg;
-    [SerializeField] private GameObject menuPlay;
-    [SerializeField] private GameObject menuChar;
+    [SerializeField] private GameObject menuStart;          // Referência ao menu de início
+    [SerializeField] private GameObject menuConfg;          // Referência ao menu de configurações
+    [SerializeField] private GameObject menuPlay;           // Referência ao menu de jogo
+    [SerializeField] private GameObject menuChar;           // Referência ao menu de seleção de personagem
 
-    public void MenuStart()
+    public void MenuStart()                                 // Ativa o menu de início e desativa os outros menus
     {
         menuStart.SetActive(true);
 
@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("start");
     }
 
-    public void MenuConfg()
+    public void MenuConfg()                                 // Ativa o menu de configurações e desativa os outros menus
     {
         menuConfg.SetActive(true);
 
@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("");
     }
 
-    public void MenuPlay()
+    public void MenuPlay()                                  // Ativa o menu de jogo e desativa os outros menus
     {
         menuPlay.SetActive(true);
 
@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("");
     }
 
-    public void MenuChar()
+    public void MenuChar()                                  // Ativa o menu de seleção de personagem e desativa os outros menus
     {
         menuChar.SetActive(true);
 
@@ -49,15 +49,11 @@ public class MainMenu : MonoBehaviour
         menuConfg.SetActive(false);
         menuPlay.SetActive(false);
         Debug.Log("");
-    }
+    }          
 
-          
-
-    public void Exit()
+    public void Exit()                                      // Sair do Game
     {
         Application.Quit();
         Debug.Log("sair");
-    }
-
-    
+    }    
 }

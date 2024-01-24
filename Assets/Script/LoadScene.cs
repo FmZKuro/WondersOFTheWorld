@@ -8,17 +8,17 @@ public class LoadScene : MonoBehaviour
 {
     public void Queops()
     {
-        SceneManager.LoadScene("queops");
+        SceneManager.LoadScene("queops");           // Carrega a cena "queops"
     }
 
     public void Quefren()
     {
-        SceneManager.LoadScene("quefren");
+        SceneManager.LoadScene("quefren");          // Carrega a cena "quefren"
     }
 
     public void Ruinas()
     {
-        SceneManager.LoadScene("ruinas");
+        SceneManager.LoadScene("ruinas");           // Carrega a cena "ruinas"
     }
 
 

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Respawn : MonoBehaviour
 {
-    private Vector3 respawnPosition;
+    private Vector3 respawnPosition;                                       // Variável para armazenar a posição de respawn do Player
     void Start()
     {
         
@@ -14,28 +14,17 @@ public class Respawn : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // Verifica se o jogador colidiu com um objeto que tem a tag "respawplayer"
-        if (other.CompareTag("respawplayer"))
-        {
-            // Salva a posição do objeto com a tag "respawplayer"
-            respawnPosition = other.transform.position;
-
-            // Exemplo de como você pode usar a posição salva
-            Debug.Log("Posição de respawn salva: " + respawnPosition);
-
-            // Aqui, você pode chamar uma função ou fazer qualquer outra coisa com a posição salva
+    void OnTriggerEnter2D(Collider2D other)                                 // Chamado quando o Player colide com algum Collider2D
+    {       
+        if (other.CompareTag("respawplayer"))                               // Verifica se o Player colidiu com um objeto que tem a tag "respawplayer"
+        {            
+            respawnPosition = other.transform.position;                     // Salva a posição do objeto com a tag "respawplayer"                        
+            Debug.Log("Posição de respawn salva: " + respawnPosition);      // Exemplo de como você pode usar a posição salva
         }
-
-        // Verifica se o jogador colidiu com um objeto que tem a tag "death"
-        if (other.CompareTag("death"))
-        {
-            // Define a posição do jogador para a posição salva
-            transform.position = respawnPosition;
-
-            // Aqui, você pode chamar uma função ou fazer qualquer outra coisa após o respawn
+                
+        if (other.CompareTag("death"))                                      // Verifica se o Player colidiu com um objeto que tem a tag "death"
+        {            
+            transform.position = respawnPosition;                           // Define a posição do Player para a posição salva
         }
     }
-
 }
