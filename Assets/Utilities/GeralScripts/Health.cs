@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [Header("Health")]
-    public int startingHealth;                                                          // Quantidade incial de vida
+    public int startingHealth;                                                          // Quantidade incial de vida 
     public int currentHealth;                                                          // Quantidade de vida atual
 
     [SerializeField] private HealthBar healthBar;                                       // Referência para a barra de vida (HealthBar)
@@ -53,7 +53,6 @@ public class Health : MonoBehaviour
         IgnoreAllLayersCollision(false);                                                // Garante que as colisões com as camadas específicas não estão ignoradas
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -65,6 +64,7 @@ public class Health : MonoBehaviour
         {
             healthBar.setHealth(currentHealth);                                         // Atualiza a barra de vida (HealthBar)
         }
+       
     }
 
     public void takeDamage()
@@ -123,13 +123,12 @@ public class Health : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        
-        if (collision.gameObject.CompareTag("hp"))
+        if (other.CompareTag("hp"))
         {
             currentHealth += 1;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
