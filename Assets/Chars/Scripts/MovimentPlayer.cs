@@ -5,11 +5,9 @@ using UnityEngine.InputSystem;
 
 public class MovimentPlayer : MonoBehaviour
 {
-    public CheckPoint checkPoint;                                                   // Verificar o ponto para Respawn
     private Rigidbody2D rb;                                                         
     private Animator AnimPlayer;                                                    // Referência ao componente Animator do Player
     float directionMove = 0f;                                                       // Variável de movimento horizontal
-    public float RespawnHeight = -5f;                                               // Limite de queda para o Player respawnar
 
     bool isRight = true;                                                            // Verificação do Player estar virado para a direita
 
@@ -102,13 +100,6 @@ public class MovimentPlayer : MonoBehaviour
             AnimPlayer.SetBool("IsJumping", false);                                 // Resetar animação de pulo e queda quando estiver no chão
             AnimPlayer.SetBool("IsFall", false);
         }        
-
-        if (transform.position.y < RespawnHeight)
-        {
-            GetComponent<Health>().takeDamage();                                    // Player sofre dano se estiver abaixo da altura de respawn
-            checkPoint.ResPlayer();                                                 // Respawnar o Player no ponto de Respawn
-        }
-        
     }
 
     private void FixedUpdate()

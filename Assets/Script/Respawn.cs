@@ -23,7 +23,8 @@ public class Respawn : MonoBehaviour
         }
                 
         if (other.CompareTag("death"))                                      // Verifica se o Player colidiu com um objeto que tem a tag "death"
-        {            
+        {
+            GetComponent<Health>().takeDamage();                            // Player sofre dano após colidir com um objeto que tem a tag "death"
             transform.position = respawnPosition;                           // Define a posição do Player para a posição salva
         }
     }

@@ -216,7 +216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907950801721766867, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 184.6
+      value: 187.24
       objectReference: {fileID: 0}
     - target: {fileID: 907950801721766867, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -260,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 4359383419762930539}
     - target: {fileID: 1305665997958207457, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
       propertyPath: speedMove
-      value: 85
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3513541017963115236, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
       propertyPath: m_Name
@@ -274,6 +274,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 8038834159794598871}
+    - target: {fileID: 5196973268221951240, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
+      propertyPath: TargetNumLayers.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1212527183052220337, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}

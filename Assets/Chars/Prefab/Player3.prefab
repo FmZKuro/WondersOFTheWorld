@@ -120,7 +120,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &6403034206874459981
@@ -236,7 +236,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   IFramesDuration: 3
   CountFlashses: 3
-  TargetNumLayers: 0a00000008000000
+  TargetNumLayers: 0a00000009000000
 --- !u!114 &3956674801212695326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,8 +249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce95360a7d72942b1966b6ea162a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPoint: {fileID: 0}
-  RespawnHeight: -5
   speedMove: 10
   jumpForce: 9
   jumpTime: 0.35

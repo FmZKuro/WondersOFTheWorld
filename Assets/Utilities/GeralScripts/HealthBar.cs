@@ -51,6 +51,10 @@ public class HealthBar : MonoBehaviour
         if (sliderRef != null)
         {
             setHealthSlider(health);                               // Se houver Slider, ajusta o valor do Slider
+            if (health <= 0)
+            {
+                sliderRef.gameObject.SetActive(false);             // Caso a vida seja zero, desativa a exibição do Slider de vida
+            }
         }
         else
         {
