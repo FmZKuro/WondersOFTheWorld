@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     [Header("Health")]
     public int startingHealth;                                                          // Quantidade incial de vida
-    private int currentHealth;                                                          // Quantidade de vida atual
+    public int currentHealth;                                                          // Quantidade de vida atual
 
     [SerializeField] private HealthBar healthBar;                                       // Referência para a barra de vida (HealthBar)
 
@@ -23,6 +23,16 @@ public class Health : MonoBehaviour
     private Vector3 respawnPoint;
     private Transform player;
 
+
+    public int getCurrentHealth()
+    {
+        return this.currentHealth;
+    }
+
+    public void setCurrentHealth( int numero)
+    {
+        this.currentHealth = numero;
+    }
 
 
     private void Awake()
@@ -46,25 +56,26 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
+        if (gameObject.tag == "Player")
+        {
+            healthBar.setHealth(currentHealth);                                   // Definir o parâmetro de animação de morte do Player
+        }
+        if (healthBar != null && gameObject.tag == "Enemy")
+        {
+            healthBar.setHealth(currentHealth);                                         // Atualiza a barra de vida (HealthBar)
+        }
     }
 
     public void takeDamage()
     {
         currentHealth -= 1;                                                             // Reduz a vida atual
 
-        if (healthBar != null)
-        {
-            healthBar.setHealth(currentHealth);                                         // Atualiza a barra de vida (HealthBar)
-        }
-
         if (currentHealth <= 0)                                                         // Verifica se a vida chegou a zero
         {
             if (gameObject.tag == "Player")
             {
                 AnimPlayer.SetBool("IsDeath", true);                                    // Definir o parâmetro de animação de morte do Player
-                Time.timeScale = 0f;                                                    // Pausa o tempo do jogo
-                SceneManager.LoadScene("Menu");                                         // Carrega a cena do menu
             }
         }
         else
@@ -120,25 +131,6 @@ public class Health : MonoBehaviour
             currentHealth += 1;
             Destroy(collision.gameObject);
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            respawnPoint = transform.position;
-        }
-
-        if (other.CompareTag("death"))
-        {
-            respawnPoint = transform.position;
-        }
-    }
-
-    public void ResPlayer()
-    {
-        // Aqui você pode usar respawnPoint conforme necessário
-        player.position = respawnPoint;
     }
 
 

@@ -3,15 +3,21 @@ using UnityEngine.InputSystem;
 
 public class Respawn : MonoBehaviour
 {
-    private Vector3 respawnPosition;                                       // Variável para armazenar a posição de respawn do Player
+    private Vector3 respawnPosition;                                     // Variável para armazenar a posição de respawn do Player
+    private Animator AnimPlayer;
     void Start()
     {
-        
+        AnimPlayer = GetComponent<Animator>();
     }
 
     void Update()
     {
-
+        if(GetComponent<Health>().getCurrentHealth() == 0)
+        {
+            AnimPlayer.SetBool("IsDeath", false);
+            transform.position = respawnPosition;
+            GetComponent<Health>().setCurrentHealth(5);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)                                 // Chamado quando o Player colide com algum Collider2D
@@ -24,7 +30,6 @@ public class Respawn : MonoBehaviour
                 
         if (other.CompareTag("death"))                                      // Verifica se o Player colidiu com um objeto que tem a tag "death"
         {
-            GetComponent<Health>().takeDamage();                            // Player sofre dano após colidir com um objeto que tem a tag "death"
             transform.position = respawnPosition;                           // Define a posição do Player para a posição salva
         }
     }

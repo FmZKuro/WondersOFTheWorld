@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6421134810660787828}
   - component: {fileID: 640215905582573983}
   - component: {fileID: 9081723593798184514}
-  - component: {fileID: 7264271662512362564}
+  - component: {fileID: 434984150247891375}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -39,7 +39,7 @@ Transform:
   - {fileID: 2350654831164518502}
   - {fileID: 7231759450610110333}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9190555600115074190
 SpriteRenderer:
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+  currentHealth: 0
   healthBar: {fileID: 0}
   IFramesDuration: 3
   CountFlashses: 3
@@ -219,8 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce95360a7d72942b1966b6ea162a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPoint: {fileID: 0}
-  RespawnHeight: -5
   speedMove: 10
   jumpForce: 9
   jumpTime: 0.35
@@ -229,7 +228,7 @@ MonoBehaviour:
     m_Bits: 256
   feetPos: {fileID: 2350654831164518502}
   feetRadius: 0.2
---- !u!114 &7264271662512362564
+--- !u!114 &434984150247891375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,7 +237,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 209938564464012562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ebbb74f3e4d0b459a423ff13926741, type: 3}
+  m_Script: {fileID: 11500000, guid: b2105f0db4eb6754ca8364a55afcbd31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8190551169739202255
