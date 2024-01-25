@@ -25,10 +25,17 @@ public class CheckPoint : MonoBehaviour
         {
             respawnPoint = transform.position;          // Atualiza o ponto de respawn quando o Player entra no trigger
         }
+
+        if (other.CompareTag("death"))
+        {
+            respawnPoint = transform.position;
+        }
     }
 
     public void ResPlayer()                             // Função para ressuscitar o Player no ponto de respawn
     {
         player.position = respawnPoint;                 // Reposiciona o Player no último ponto de respawn registrado
     }
+
+   
 }

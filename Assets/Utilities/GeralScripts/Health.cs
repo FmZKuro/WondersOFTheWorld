@@ -20,6 +20,10 @@ public class Health : MonoBehaviour
     private Animator AnimPlayer;                                                        // Referência ao componente Animator do Player
     private Animator AnimEnemy;                                                         // Referência ao componente Animator do Enemy
 
+    private Vector3 respawnPoint;
+    private Transform player;
+
+
 
     private void Awake()
     {
@@ -106,4 +110,37 @@ public class Health : MonoBehaviour
 
         IgnoreAllLayersCollision(false);                                                // Restaura as colisões com camadas específicas
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.CompareTag("hp"))
+        {
+            currentHealth += 1;
+            Destroy(collision.gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            respawnPoint = transform.position;
+        }
+
+        if (other.CompareTag("death"))
+        {
+            respawnPoint = transform.position;
+        }
+    }
+
+    public void ResPlayer()
+    {
+        // Aqui você pode usar respawnPoint conforme necessário
+        player.position = respawnPoint;
+    }
+
+
+
 }
