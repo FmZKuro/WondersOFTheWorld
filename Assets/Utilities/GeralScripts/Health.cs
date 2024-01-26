@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public int startingHealth;                                                          // Quantidade incial de vida 
     public int currentHealth;                                                          // Quantidade de vida atual
 
+
     [SerializeField] private HealthBar healthBar;                                       // Referência para a barra de vida (HealthBar)
 
     [Header("IFrames")]
@@ -55,16 +56,36 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-        
-        if (gameObject.tag == "Player")
+
+        if (gameObject.CompareTag("Player"))
         {
-            healthBar.setHealth(currentHealth);                                   // Definir o parâmetro de animação de morte do Player
+            // Verifica se healthBar é diferente de null antes de atualizar
+            if (healthBar != null)
+            {
+                healthBar.setHealth(currentHealth); // Atualiza a barra de vida do jogador
+            }
         }
-        if (healthBar != null && gameObject.tag == "Enemy")
+        else if (gameObject.CompareTag("Enemy"))
         {
-            healthBar.setHealth(currentHealth);                                         // Atualiza a barra de vida (HealthBar)
+            // Verifica se healthBar é diferente de null antes de atualizar
+            if (healthBar != null)
+            {
+                healthBar.setHealth(currentHealth); // Atualiza a barra de vida do inimigo
+            }
         }
-       
+        /* 
+         if (gameObject.tag == "Player")
+         {
+             healthBar.setHealth(currentHealth);                                   // Definir o parâmetro de animação de morte do Player
+         }*/
+
+
+
+         if (healthBar != null && gameObject.tag == "Enemy")
+         {
+             healthBar.setHealth(currentHealth);                                         // Atualiza a barra de vida (HealthBar)
+         }
+
     }
 
     public void takeDamage()
@@ -131,6 +152,10 @@ public class Health : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+
+    
+
 
 
 

@@ -1,25 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class BossDead : MonoBehaviour
 {
+       
+    [SerializeField] private GameObject thisInimigo; // Inimigo referencia
+    [SerializeField] private GameObject menus; // tela referencia
 
-    private Vitoria vitoriaScript;
+    private Health healthScript;
 
-    private void Start()
+    void Start()
     {
-        vitoriaScript = FindObjectOfType<Vitoria>();
+        // Obtém uma referência ao componente Health desse monstro
+        healthScript = GetComponent<Health>();
+
     }
 
-    private void DerrotarInimigo()
+    void FixedUpdate()
     {
-        // Lógica para derrotar o inimigo
-
-        // Chamar o método InimigoDerrotado do script Vitoria
-        if (vitoriaScript != null)
+        // Verifica se o inimigo é o objeto referenciado e se hp chegou a zero
+        if (healthScript != null && healthScript.getCurrentHealth() <= 0 && gameObject.CompareTag(thisInimigo.tag))
         {
-            vitoriaScript.InimigoDerrotado();
+            MenuAtc();
         }
     }
+
+
+    // evento que libera tela final de vitoria
+    void MenuAtc()
+    {
+        Invoke("MethodName", 3f);
+        menus.SetActive(true);
+
+    }
+
+
+    
 }
