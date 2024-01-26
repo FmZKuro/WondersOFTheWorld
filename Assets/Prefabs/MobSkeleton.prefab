@@ -279,9 +279,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8038834159794598871}
     - target: {fileID: 5196973268221951240, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+    - target: {fileID: 5196973268221951240, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 81f1712d475f56744b8d61803ce75c41, type: 3}
+    - target: {fileID: 5196973268221951240, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
       propertyPath: TargetNumLayers.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7547465743400980336, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
+      propertyPath: attackEnemySound
+      value: 
+      objectReference: {fileID: 8300000, guid: cc6699269b4c1d44ea1e860518b9bb73, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1212527183052220337, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}

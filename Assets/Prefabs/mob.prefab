@@ -290,6 +290,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 682572950884056836}
     m_Modifications:
+    - target: {fileID: 375956746114549311, guid: 207aa8b8a5034c441a396ab921163079, type: 3}
+      propertyPath: attackEnemySound
+      value: 
+      objectReference: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
     - target: {fileID: 560730192147291559, guid: 207aa8b8a5034c441a396ab921163079, type: 3}
       propertyPath: m_SortingOrder
       value: 9
@@ -354,6 +358,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 4471442066273887577}
+    - target: {fileID: 7198404843678744629, guid: 207aa8b8a5034c441a396ab921163079, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fbc798e0eebe4d34d81100e333339c67, type: 3}
+    - target: {fileID: 7198404843678744629, guid: 207aa8b8a5034c441a396ab921163079, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a60567abeb15d954da2b3f158be5bc2b, type: 3}
     - target: {fileID: 7198404843678744629, guid: 207aa8b8a5034c441a396ab921163079, type: 3}
       propertyPath: TargetNumLayers.Array.data[0]
       value: 3

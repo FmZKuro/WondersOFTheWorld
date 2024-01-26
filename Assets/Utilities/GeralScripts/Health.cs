@@ -17,6 +17,11 @@ public class Health : MonoBehaviour
     private SpriteRenderer spriteRender;                                                // Referência ao componente SpriteRenderer
     [SerializeField] private int[] TargetNumLayers;                                     // Número das camadas de colisão a serem afetadas pela invulnerabilidade
 
+    [Header("Damage Sounds")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private float pitchHit = 1.0f;
+
     private Animator AnimPlayer;                                                        // Referência ao componente Animator do Player
     private Animator AnimEnemy;                                                         // Referência ao componente Animator do Enemy
 
@@ -73,6 +78,8 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)                                                         // Verifica se a vida chegou a zero
         {
+            SoundEffectControler.instance.playSound(deathSound, 1.0f);
+
             if (gameObject.tag == "Player")
             {
                 AnimPlayer.SetBool("IsDeath", true);                                    // Definir o parâmetro de animação de morte do Player
@@ -110,6 +117,7 @@ public class Health : MonoBehaviour
     {
         IgnoreAllLayersCollision(true);                                                 // Ignora as colisões com camadas específicas
 
+        SoundEffectControler.instance.playSound(hurtSound, 1.0f, pitchHit);
         GetComponent<Animator>().SetTrigger("Hurt");                                    // Definir o parâmetro de animação de Dano
         for (int i = 0; i < CountFlashses; i++)
         {

@@ -11,7 +11,7 @@ public class EnemySkeletonAttack : MonoBehaviour
     public float attackCooldown;                                                    // Tempo mínimo entre ataques
     private float timerAttack;                                                      // Temporizador para controlar o tempo entre ataques
     private float distanceToTarget;                                                 // Distância atual até o alvo
-
+    public AudioClip attackEnemySound;
     public GameObject SwordSkeleton;                                                // GameObject da espada do Skeleton
     private Vector2 initPosAttack;                                                  // Posição inicial da espada
     public Transform playerTransform;                                               // Transform do Player para ajustar a orientação da caixa de colsião
@@ -60,5 +60,6 @@ public class EnemySkeletonAttack : MonoBehaviour
     private void AttackEnemy()
     {
         AnimEnemy.SetTrigger("InAttack");                                           // Definir o parâmetro de animação de ataque do Enemy
+        SoundEffectControler.instance.playSound(attackEnemySound, 0.5f);
     }
 }
