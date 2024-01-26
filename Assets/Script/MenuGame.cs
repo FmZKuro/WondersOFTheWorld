@@ -24,8 +24,8 @@ public class MenuGame : MonoBehaviour
             if (esc)
             {
                 Esc();                                  // Chama o método para pausar o jogo
-                Cursor.visible = true;                  // Habilita o Cursor do Mouse no Menu
-                Cursor.lockState = CursorLockMode.None; // Destrava o Cursor
+                //Cursor.visible = true;                  // Habilita o Cursor do Mouse no Menu
+                //Cursor.lockState = CursorLockMode.None; // Destrava o Cursor
             }
             else
             {
@@ -44,8 +44,8 @@ public class MenuGame : MonoBehaviour
     {
         Time.timeScale = 1f;                            // Retoma o tempo do jogo
         menuGame.SetActive(false);                      // Desativa o menu de pausa
-        Cursor.visible = false;                         // Desabilita o Cursor do Mouse in Game
-        Cursor.lockState = CursorLockMode.Locked;       // Travar o Cursor do Mouse no centro da tela
+        //Cursor.visible = false;                         // Desabilita o Cursor do Mouse in Game
+        //Cursor.lockState = CursorLockMode.Locked;       // Travar o Cursor do Mouse no centro da tela
     }
 
     public void LoadMenuScene()                         // Carrega a cena do menu principal

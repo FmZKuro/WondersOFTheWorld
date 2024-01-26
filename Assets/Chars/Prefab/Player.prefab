@@ -40,7 +40,7 @@ Transform:
   - {fileID: 2350654831164518502}
   - {fileID: 7231759450610110333}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9190555600115074190
 SpriteRenderer:
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 4723107735738678597, guid: f374107ba66790641b6b7c9d0d9a49d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AtttackDuration: 0.3
+  attackSound: {fileID: 8300000, guid: 1b9545bf984745e4eb31386351dac2b3, type: 3}
   HitBoxAttack: {fileID: 9074845214236226611}
 --- !u!114 &640215905582573983
 MonoBehaviour:
@@ -222,6 +223,9 @@ MonoBehaviour:
   IFramesDuration: 3
   CountFlashses: 3
   TargetNumLayers: 0a00000009000000
+  deathSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: 04dc759ee78ab2b449d323cdea746629, type: 3}
+  pitchHit: 1
 --- !u!114 &9081723593798184514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,8 +239,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMove: 10
+  runSound: {fileID: 0}
+  fallSound: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   jumpForce: 9
   jumpTime: 0.35
+  jumpSound: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
