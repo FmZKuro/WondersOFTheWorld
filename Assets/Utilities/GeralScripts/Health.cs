@@ -35,7 +35,7 @@ public class Health : MonoBehaviour
         return this.currentHealth;
     }
 
-    public void setCurrentHealth( int numero)
+    public void setCurrentHealth(int numero)
     {
         this.currentHealth = numero;
     }
@@ -86,10 +86,10 @@ public class Health : MonoBehaviour
 
 
 
-         if (healthBar != null && gameObject.tag == "Enemy")
-         {
-             healthBar.setHealth(currentHealth);                                         // Atualiza a barra de vida (HealthBar)
-         }
+        if (healthBar != null && gameObject.tag == "Enemy")
+        {
+            healthBar.setHealth(currentHealth);                                         // Atualiza a barra de vida (HealthBar)
+        }
 
     }
 
@@ -115,7 +115,7 @@ public class Health : MonoBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
-                AnimEnemy.SetBool("Death",true);                                        // Definir o parâmetro de animação de morte do Enemy
+                AnimEnemy.SetBool("Death", true);                                        // Definir o parâmetro de animação de morte do Enemy
                 GetComponent<EnemyFollow>().DeathEnemy();                               // Chama a função de morte do Enemy
             }
         }
@@ -160,11 +160,4 @@ public class Health : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
-
-    
-
-
-
-
 }
