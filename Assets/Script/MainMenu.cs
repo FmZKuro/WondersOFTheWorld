@@ -6,72 +6,66 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    // Telas de referencia para manipulação
     [SerializeField] private GameObject menuStart;
     [SerializeField] private GameObject menuConfg;
     [SerializeField] private GameObject menuPlay;
     [SerializeField] private GameObject menuCredito;
-    [SerializeField] private GameObject menuChar;
 
-    public void MenuStart()
-    {
+    
+    public void MenuStart() // metodo paracaregar menu inicial
+    { 
         menuStart.SetActive(true);
 
         menuConfg.SetActive(false);
         menuPlay.SetActive(false);
-        menuChar.SetActive(false);
         menuCredito.SetActive(false);
 
         Debug.Log("start");
     }
 
-    public void MenuConfg()
+    public void MenuConfg() // metodo paracaregar as configuraçoes
     {
         menuConfg.SetActive(true);
 
         menuStart.SetActive(false);
         menuPlay.SetActive(false);
-        menuChar.SetActive(false);
         menuCredito.SetActive(false);
 
-        Debug.Log("soun");
+        Debug.Log("confg");
     }
 
-    public void MenuPlay()
+    public void MenuPlay() // metodo paracaregar tela de seleção de fases
     {
         menuPlay.SetActive(true);
 
         menuStart.SetActive(false);
         menuConfg.SetActive(false);
-        menuChar.SetActive(false);
         menuCredito.SetActive(false);
 
         Debug.Log("play");
     }
+      
 
-    public void MenuChar()
-    {
-        menuChar.SetActive(true);
-
-        menuStart.SetActive(false);
-        menuConfg.SetActive(false);
-        menuPlay.SetActive(false);
-        menuCredito.SetActive(false);
-
-        Debug.Log("");
-    }
-
-    public void MenuCredito()
+    public void MenuCredito() // metodo paracaregar tela de creditos
     {
         menuCredito.SetActive(true);
 
-        menuChar.SetActive(false);
         menuStart.SetActive(false);
         menuConfg.SetActive(false);
         menuPlay.SetActive(false);
+
         Debug.Log("credito");
     }
 
-    public void Exit()
+    public void Tutorial() //logar fase tutorial
+    {
+        SceneManager.LoadScene("Ruinas");
+        Debug.Log("load tutorial");
+    }
+
+    public void Exit() // saida do jogo
     {
         Application.Quit();
         Debug.Log("sair");
