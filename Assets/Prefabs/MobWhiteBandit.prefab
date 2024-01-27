@@ -31,7 +31,7 @@ Transform:
   - {fileID: 9051187368268622699}
   - {fileID: 789074786353696131}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7370800678876262084
 PrefabInstance:
@@ -165,26 +165,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BanditEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3104287060721443571, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.15404704
-      objectReference: {fileID: 0}
-    - target: {fileID: 3104287060721443571, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.15404706
-      objectReference: {fileID: 0}
-    - target: {fileID: 3104287060721443571, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.15404704
-      objectReference: {fileID: 0}
-    - target: {fileID: 3104287060721443571, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.0010919
-      objectReference: {fileID: 0}
-    - target: {fileID: 4040919111346830231, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.508
-      objectReference: {fileID: 0}
     - target: {fileID: 7982487655600841670, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
       propertyPath: pointA
       value: 
@@ -196,18 +176,6 @@ PrefabInstance:
     - target: {fileID: 8286626948922783712, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840946486008191295, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.83963114
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840946486008191295, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6128121
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840946486008191295, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.27238357
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
