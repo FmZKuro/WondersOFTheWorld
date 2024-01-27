@@ -165,6 +165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BanditEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4362432052356610978, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
+      propertyPath: m_Mass
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7982487655600841670, guid: 83dae8cb53dfb3c43947cf2d065da1ab, type: 3}
       propertyPath: pointA
       value: 

@@ -28,14 +28,22 @@ public class EnemyAttack : MonoBehaviour
 
         if (distanceToTarget <= attackRange)                                        // Verificar se o Player está dentro da distância de ataque
         {
-            if (Time.time - timerAttack >= attackCooldown)                          // Verificar se o Cooldown entre os ataques foi atingido
+            if (Time.time - timerAttack >= attackCooldown && GetComponent<Health>().currentHealth > 0) // Verificar se o Cooldown entre os ataques foi atingido
             {
                 AttackEnemy();                                                      // Chamar a função para atacar
                 timerAttack = Time.time;                                            // Reiniciar o temporizador do ataque
             }
         }
 
-        UpdateAttackHitBoxDirection();                                              // Chamar a função de atualizar a orientação da caixa de colisão do ataque
+
+
+
+
+
+
+
+
+            UpdateAttackHitBoxDirection();                                              // Chamar a função de atualizar a orientação da caixa de colisão do ataque
     }
 
     private void UpdateAttackHitBoxDirection()

@@ -20,6 +20,24 @@ public class EnemyFollow : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();                                           // Obter o componente Rigidbody no Enemy
         animEnemy = GetComponent<Animator>();                                       // Obter o componente Animator no Enemy
         SetNewDestination();                                                        // Chamar a função de definição de novo destino inicial
+
+        Collider2D enemyCollider = GetComponent<Collider2D>();
+        if (enemyCollider != null)
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            {
+                if (enemy != gameObject) // Não compara com o próprio inimigo
+                {
+                    Collider2D otherEnemyCollider = enemy.GetComponent<Collider2D>();
+                    if (otherEnemyCollider != null)
+                    {
+                        Physics2D.IgnoreCollision(enemyCollider, otherEnemyCollider);
+                    }
+                }
+            }
+        }
+
     }
 
     void Update()
