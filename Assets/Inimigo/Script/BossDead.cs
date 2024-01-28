@@ -9,6 +9,7 @@ public class BossDead : MonoBehaviour
        
     [SerializeField] private GameObject thisInimigo; // Inimigo referencia
     [SerializeField] private GameObject menus; // tela referencia
+    [SerializeField] private GameObject detarInimigo;// Inimigo referencia
 
     private Health healthScript;
 
@@ -34,7 +35,7 @@ public class BossDead : MonoBehaviour
     {
         Invoke("MethodName", 3f);
         menus.SetActive(true);
-
+        Destroy(detarInimigo);
     }
 
 
