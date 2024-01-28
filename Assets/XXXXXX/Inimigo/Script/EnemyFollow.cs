@@ -12,6 +12,7 @@ public class EnemyFollow : MonoBehaviour
     private Vector2 directionTarget;                                                // Direção para o próximo destino
     private Animator animEnemy;                                                     // Referência ao componente Animator do Enemy
     public float destroyHeight = -5f;                                               // Altura para destruir o Enemy
+
     private bool isDead = false;                                                    // Indicação se o Enemy está morto
     private bool canFollowPlayer = false;                                           // Indicação se o Enemy pode seguir o Player
 
@@ -24,20 +25,20 @@ public class EnemyFollow : MonoBehaviour
         Collider2D enemyCollider = GetComponent<Collider2D>();
         if (enemyCollider != null)
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (GameObject enemy in enemies)
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");      // Encontra todos os objetos no jogo com a tag "Enemy" e os armazena em um array chamado 'enemies'
+            foreach (GameObject enemy in enemies)                                   // Itera sobre todos os objetos inimigos encontrados
             {
-                if (enemy != gameObject) // Não compara com o próprio inimigo
+                if (enemy != gameObject)                                            // Garante que não estamos comparando o objeto inimigo consigo mesmo
                 {
                     Collider2D otherEnemyCollider = enemy.GetComponent<Collider2D>();
                     if (otherEnemyCollider != null)
                     {
-                        Physics2D.IgnoreCollision(enemyCollider, otherEnemyCollider);
+                        // Ignora a colisão entre o Collider2D do objeto ao qual este script está anexado e o Collider2D do inimigo atual
+                        Physics2D.IgnoreCollision(enemyCollider, otherEnemyCollider);   
                     }
                 }
             }
         }
-
     }
 
     void Update()

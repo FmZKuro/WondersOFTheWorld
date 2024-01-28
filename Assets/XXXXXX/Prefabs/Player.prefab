@@ -220,6 +220,7 @@ MonoBehaviour:
   startingHealth: 5
   currentHealth: 0
   healthBar: {fileID: 0}
+  hpSound: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   IFramesDuration: 3
   CountFlashses: 3
   TargetNumLayers: 0a00000009000000

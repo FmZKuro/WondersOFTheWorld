@@ -7,28 +7,23 @@ public class Health : MonoBehaviour
 {
     [Header("Health")]
     public int startingHealth;                                                          // Quantidade incial de vida 
-    public int currentHealth;                                                          // Quantidade de vida atual
-
-
+    public int currentHealth;                                                           // Quantidade de vida atual
     [SerializeField] private HealthBar healthBar;                                       // Referência para a barra de vida (HealthBar)
+    [SerializeField] private AudioClip hpSound;                                         // Som a ser reproduzido ao coletar um item de vida
 
     [Header("IFrames")]
     [SerializeField] private float IFramesDuration;                                     // Duração dos quadros de invulnerabilidade
-    [SerializeField] private int CountFlashses;                                         // Número de Flashes durante o período de invulnerabilidade
-    private SpriteRenderer spriteRender;                                                // Referência ao componente SpriteRenderer
+    [SerializeField] private int CountFlashses;                                         // Número de Flashes durante o período de invulnerabilidade    
     [SerializeField] private int[] TargetNumLayers;                                     // Número das camadas de colisão a serem afetadas pela invulnerabilidade
+    private SpriteRenderer spriteRender;                                                // Referência ao componente SpriteRenderer
 
     [Header("Damage Sounds")]
-    [SerializeField] private AudioClip deathSound;
-    [SerializeField] private AudioClip hurtSound;
-    [SerializeField] private float pitchHit = 1.0f;
+    [SerializeField] private AudioClip deathSound;                                      // Som a ser reproduzido ao morrer
+    [SerializeField] private AudioClip hurtSound;                                       // Som a ser reproduzido ao sofrer dano
+    [SerializeField] private float pitchHit = 1.0f;                                     // Define o pitch (tom) do áudio
 
     private Animator AnimPlayer;                                                        // Referência ao componente Animator do Player
     private Animator AnimEnemy;                                                         // Referência ao componente Animator do Enemy
-
-    private Vector3 respawnPoint;
-    private Transform player;
-
 
     public int getCurrentHealth()
     {
@@ -55,52 +50,38 @@ public class Health : MonoBehaviour
         {
             healthBar.setMaxHealth(startingHealth);                                     // Define a quantidade máxima de vida na barra de vida (HealthBar)
         }
-
         IgnoreAllLayersCollision(false);                                                // Garante que as colisões com as camadas específicas não estão ignoradas
     }
 
     void Update()
     {
-
         if (gameObject.CompareTag("Player"))
-        {
-            // Verifica se healthBar é diferente de null antes de atualizar
-            if (healthBar != null)
+        {            
+            if (healthBar != null)                                                      // Verifica se healthBar é diferente de null antes de atualizar
             {
-                healthBar.setHealth(currentHealth); // Atualiza a barra de vida do jogador
+                healthBar.setHealth(currentHealth);                                     // Atualiza a barra de vida do jogador
             }
         }
         else if (gameObject.CompareTag("Enemy"))
-        {
-            // Verifica se healthBar é diferente de null antes de atualizar
-            if (healthBar != null)
+        {            
+            if (healthBar != null)                                                      // Verifica se healthBar é diferente de null antes de atualizar
             {
-                healthBar.setHealth(currentHealth); // Atualiza a barra de vida do inimigo
+                healthBar.setHealth(currentHealth);                                     // Atualiza a barra de vida do inimigo
             }
         }
-        /* 
-         if (gameObject.tag == "Player")
-         {
-             healthBar.setHealth(currentHealth);                                   // Definir o parâmetro de animação de morte do Player
-         }*/
-
-
 
         if (healthBar != null && gameObject.tag == "Enemy")
         {
             healthBar.setHealth(currentHealth);                                         // Atualiza a barra de vida (HealthBar)
         }
-
     }
 
     public void takeDamage()
     {
         currentHealth -= 1;                                                             // Reduz a vida atual
-
         if (currentHealth <= 0)                                                         // Verifica se a vida chegou a zero
         {
-            SoundEffectControler.instance.playSound(deathSound, 1.0f);
-
+            SoundEffectControler.instance.playSound(deathSound, 1.0f);                  // Reproduz o som do Morte
             if (gameObject.tag == "Player")
             {
                 AnimPlayer.SetBool("IsDeath", true);                                    // Definir o parâmetro de animação de morte do Player
@@ -115,7 +96,7 @@ public class Health : MonoBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
-                AnimEnemy.SetBool("Death", true);                                        // Definir o parâmetro de animação de morte do Enemy
+                AnimEnemy.SetBool("Death", true);                                       // Definir o parâmetro de animação de morte do Enemy
                 GetComponent<EnemyFollow>().DeathEnemy();                               // Chama a função de morte do Enemy
             }
         }
@@ -147,17 +128,16 @@ public class Health : MonoBehaviour
             spriteRender.color = Color.white;                                           // Restaura a cor original do Sprite
             yield return new WaitForSeconds(IFramesDuration / (CountFlashses * 2));     // Aguarda a outra parte do tempo total de invulnerabilidade
         }
-
         IgnoreAllLayersCollision(false);                                                // Restaura as colisões com camadas específicas
     }
-
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("hp"))
         {
-            currentHealth += 1;
-            Destroy(other.gameObject);
+            currentHealth += 1;                                                         // Aumenta a vida atual
+            Destroy(other.gameObject);                                                  // Destroi o objeto colidido
+            SoundEffectControler.instance.playSound(hpSound, 1.0f, pitchHit);           // Reproduz o som associado ao ganho de vida
         }
     }
 }

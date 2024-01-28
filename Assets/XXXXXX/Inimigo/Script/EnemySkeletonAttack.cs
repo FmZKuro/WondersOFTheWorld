@@ -11,10 +11,10 @@ public class EnemySkeletonAttack : MonoBehaviour
     public float attackCooldown;                                                    // Tempo mínimo entre ataques
     private float timerAttack;                                                      // Temporizador para controlar o tempo entre ataques
     private float distanceToTarget;                                                 // Distância atual até o alvo
-    public AudioClip attackEnemySound;
+    public AudioClip attackEnemySound;                                              // Som a ser reproduzido ao atacar
+    public Transform playerTransform;                                               // Transform do Player para ajustar a orientação da caixa de colsião
     public GameObject SwordSkeleton;                                                // GameObject da espada do Skeleton
     private Vector2 initPosAttack;                                                  // Posição inicial da espada
-    public Transform playerTransform;                                               // Transform do Player para ajustar a orientação da caixa de colsião
 
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class EnemySkeletonAttack : MonoBehaviour
 
         if (distanceToTarget <= attackRange)                                        // Verifica se o Player está dentro da distância de ataque
         {
-            if (Time.time - timerAttack >= attackCooldown)                          // Verificar se o Cooldown entre os ataques foi atingido
+            if (Time.time - timerAttack >= attackCooldown && GetComponent<Health>().currentHealth > 0) // Verificar se o Cooldown entre os ataques foi atingido
             {
                 AttackEnemy();                                                      // Chamar a função para atacar
                 timerAttack = Time.time;                                            // Reiniciar o temporizador do ataque
@@ -60,6 +60,6 @@ public class EnemySkeletonAttack : MonoBehaviour
     private void AttackEnemy()
     {
         AnimEnemy.SetTrigger("InAttack");                                           // Definir o parâmetro de animação de ataque do Enemy
-        SoundEffectControler.instance.playSound(attackEnemySound, 0.5f);
+        SoundEffectControler.instance.playSound(attackEnemySound, 0.5f);            // Reproduz o som de ataque
     }
 }

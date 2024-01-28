@@ -14,24 +14,22 @@ public class MovimentPlayer : MonoBehaviour
     private GameInputActions playerControls;                                        // Controles de sistema de entrada do Player
     private InputAction move;
     private InputAction jump;
-    private bool isRunningSoundPlaying = false;
-    private bool isFallSoundPlaying = false;
+    private bool isRunningSoundPlaying = false;                                     // Indica se o som de execução (running) está atualmente sendo reproduzido
+    private bool isFallSoundPlaying = false;                                        // Indica se o som de queda (fall) está atualmente sendo reproduzido
 
     [Header("Moviment")]
     [SerializeField] float speedMove = 2.0f;                                        // Velocidade do Player
-
-    [Header("Running")]
-    public AudioClip runSound;
+    public AudioClip runSound;                                                      // Som a ser reproduzido ao movimentar
 
     [Header("Falling")]
-    public AudioClip fallSound;
+    public AudioClip fallSound;                                                     // Som a ser reproduzido ao cair
 
     [Header("Jumping")]
     [SerializeField] float jumpForce = 12.0f;                                       // Força aplicada de pulo
     private bool IsJumping = false;                                                 // Verificar se o Player está pulando
     private float jumpTimeCounter;                                                  // Contador de quanto tempo o jogador pode manter o botão de pulo pressionado
     public float jumpTime;                                                          // Tempo máximo que o jogo pode manter o pulo
-    public AudioClip jumpSound;
+    public AudioClip jumpSound;                                                     // Som a ser reproduzido ao pular
 
     [Header("Ground")]
     public LayerMask groundLayer;                                                   // Camada de detecção do chão
@@ -91,8 +89,7 @@ public class MovimentPlayer : MonoBehaviour
             {
                 IsJumping = false;                                                  // Parar de pular se o tempo de pulo estiver no limite
                 AnimPlayer.SetBool("IsFall", true);                                 // Definir o parâmetro de animação de queda do Player
-            }
-            
+            }            
         }       
 
         if (jump.WasReleasedThisFrame())

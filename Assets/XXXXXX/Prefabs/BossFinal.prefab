@@ -134,6 +134,14 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5196973268221951240, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 7526329240344538188}
+    - target: {fileID: 5196973268221951240, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+    - target: {fileID: 5196973268221951240, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 8300000, guid: 81f1712d475f56744b8d61803ce75c41, type: 3}
@@ -190,6 +198,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisInimigo: {fileID: 4438914683227934156}
   menus: {fileID: 0}
+--- !u!114 &7526329240344538188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7289725821227012964, guid: 1f6dd38175c407f42b1c01895d7b281f, type: 3}
+  m_PrefabInstance: {fileID: 961707165698342696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 120e0124c2560e44f8265428690c2eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8926992592339923511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,19 +243,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814280921978634557, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Size.x
-      value: 2.566982
+      value: 1.3766847
       objectReference: {fileID: 0}
     - target: {fileID: 5814280921978634557, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Size.y
-      value: 4.268298
+      value: 6.7113333
       objectReference: {fileID: 0}
     - target: {fileID: 5814280921978634557, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Offset.x
-      value: 1.7694992
+      value: 2.905667
       objectReference: {fileID: 0}
     - target: {fileID: 5814280921978634557, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0003657341
+      value: -1.2218833
       objectReference: {fileID: 0}
     - target: {fileID: 7820620049197107856, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Name
@@ -288,19 +307,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7998561214997063326, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Size.x
-      value: 1.7727787
+      value: 1.4818842
       objectReference: {fileID: 0}
     - target: {fileID: 7998561214997063326, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Size.y
-      value: 3.5973568
+      value: 6.5472584
       objectReference: {fileID: 0}
     - target: {fileID: 7998561214997063326, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Offset.x
-      value: -1.9126529
+      value: -3.8029547
       objectReference: {fileID: 0}
     - target: {fileID: 7998561214997063326, guid: 4feae398d8259af42823883bd5879ef8, type: 3}
       propertyPath: m_Offset.y
-      value: -4.130547
+      value: -5.6054964
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

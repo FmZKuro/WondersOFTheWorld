@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Attack Player")]
     private bool inAttack = false;                                          // Sinalizador para controlar se o Player está em um estado de ataque
     public float AtttackDuration;                                           // Duração do ataque do Player
-    public AudioClip attackSound;
+    public AudioClip attackSound;                                           // Som a ser reproduzido ao atacar
     public GameObject HitBoxAttack;                                         // Caixa de colisão para o ataque
     private Vector2 initPosHitBoxAttack;                                    // Posição inicial da caixa de colisão do ataque
 
@@ -77,7 +77,7 @@ public class PlayerAttack : MonoBehaviour
     {
         inAttack = true;                                                    // Define o sinalizador de ataque como verdadeiro
         AnimPlayer.SetBool("InAttack", true);                               // Definir o parâmetro de animação de ataque do Player
-        SoundEffectControler.instance.playSound(attackSound, 0.3f);
+        SoundEffectControler.instance.playSound(attackSound, 0.3f);         // Reproduz o som de ataque
 
         yield return new WaitForSeconds(AtttackDuration);                   // Aguardar a duração do ataque
 

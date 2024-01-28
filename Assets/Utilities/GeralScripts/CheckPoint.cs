@@ -28,14 +28,12 @@ public class CheckPoint : MonoBehaviour
 
         if (other.CompareTag("death"))
         {
-            respawnPoint = transform.position;
+            respawnPoint = transform.position;          // Atualiza o ponto de respawn em caso de colisão com um objeto "death"
         }
     }
 
     public void ResPlayer()                             // Função para ressuscitar o Player no ponto de respawn
     {
         player.position = respawnPoint;                 // Reposiciona o Player no último ponto de respawn registrado
-    }
-
-   
+    }   
 }

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;                         // Instância única da classe GameManager acessível de qualquer lugar
+    public static GameManager instance;                    // Instância única da classe GameManager acessível de qualquer lugar
 
-    public GameObject PlayerRef;                                // Referência para o objeto Player no jogo
+    public GameObject PlayerRef;                           // Referência para o objeto Player no jogo
 
     private void Awake()
     {
-        if (instance != null && instance != this)               // Garante que há apenas uma instância da classe GameManager em execução
+        if (instance != null && instance != this)          // Garante que há apenas uma instância da classe GameManager em execução
         {
-            Destroy(this);                                      // Destroi a instância atual se outra instância já existe
+            Destroy(this);                                 // Destroi a instância atual se outra instância já existe
         }
         else
         {
-            instance = this;                                    // Configura a instância como esta, se não há nenhuma instância existente
-            DontDestroyOnLoad(this.gameObject);                 // Mantém o GameManager durante as transições de cena
+            instance = this;                               // Configura a instância como esta, se não há nenhuma instância existente
+            DontDestroyOnLoad(this.gameObject);            // Mantém o GameManager durante as transições de cena
         }
     }
     // Start is called before the first frame update
@@ -34,11 +34,11 @@ public class GameManager : MonoBehaviour
 
     public void setPlayer(GameObject newPlayer)
     {
-        PlayerRef = newPlayer;                                  // Atribui um novo objeto Player à referência PlayerRef
+        PlayerRef = newPlayer;                              // Atribui um novo objeto Player à referência PlayerRef
     }
 
     public GameObject getPlayer()
     {
-        return PlayerRef;                                       // Retorna o objeto Player armazenado em PlayerRef
+        return PlayerRef;                                  // Retorna o objeto Player armazenado em PlayerRef
     }
 }

@@ -9,5 +9,4 @@ public class LoadMenus : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");         // Carrega a cena do menu quando esta função é chamada
     }
-
 }
