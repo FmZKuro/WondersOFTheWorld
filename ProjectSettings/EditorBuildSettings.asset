@@ -9,15 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuX.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/XXXXXX/Scenes/Menu.unity
     guid: d0441e0742e5c5844845f4b09d3ed2d0
   - enabled: 1
-    path: Assets/Scenes/Ruinas.unity
+    path: Assets/XXXXXX/Scenes/Ruinas.unity
     guid: 0844850563ff5854c883a64bc830885f
   - enabled: 1
-    path: Assets/Scenes/queops.unity
+    path: Assets/XXXXXX/Scenes/queops.unity
     guid: 8ef312f0e6358c04c9cfc3d793227fdd
   - enabled: 1
-    path: Assets/Scenes/quefren.unity
+    path: Assets/XXXXXX/Scenes/quefren.unity
     guid: 375bbce7a51c8e845a2e9dc76ee77604
   m_configObjects: {}
